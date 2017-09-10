@@ -10,7 +10,7 @@ class ShowSearchForm extends React.Component {
 					</div>
 					<div className="showSearch__form">
 						<h2>What are you looking for?</h2>
-						<form>
+						<form onSubmit={this.props.handleSubmit}>
 							<label htmlFor="city">Enter city</label>
 							<input name="city" type="text" placeholder="eg. Toronto" onChange={this.props.handleChange} />
 							<label htmlFor="date">Select a date</label>
@@ -20,7 +20,7 @@ class ShowSearchForm extends React.Component {
 								<option value="musical">Musicals</option>
 								<option value="play">Plays</option>
 							</select>
-							<button type="submit">Searc
+							<button type="submit">Search
 							</button>
 						</form>
 					</div>

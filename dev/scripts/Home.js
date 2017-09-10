@@ -18,12 +18,11 @@ class Home extends React.Component {
 	}
 	handleSubmit(event) {
 		event.preventDefault();
-		
 	}
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value,
-		})
+		});
 	}
 	render() {
 		return (

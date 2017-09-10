@@ -9,6 +9,8 @@ class ShowInputForm extends React.Component {
 		this.state = {
 		    showTitle: '',
 		    description:'',
+		    startDate: '',
+		    endDate: '',
 		    venue: '',
 		    address: '',
 		    website: '',
@@ -48,6 +50,8 @@ class ShowInputForm extends React.Component {
 		const newShow = {
 			showTitle: this.state.showTitle,
 			description:this.state.description,
+			startDate: this.state.startDate,
+			endDate: this.state.endDate,
 			venue: this.state.venue,
 			address: this.state.address,
 			website: this.state.website,
@@ -59,21 +63,33 @@ class ShowInputForm extends React.Component {
 		return (
 			<section className='add-show'>
 				<form onSubmit={this.handleSubmit}>
-		          <label htmlFor="title">Title</label>
-		          <input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
-		          <label htmlFor="description" >Description</label>
-		          <input type="text" value={this.state.description} name="description" onChange={this.handleChange} />
-		          <label htmlFor="venue">Venue</label>
-		          <input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
-		          <label htmlFor="address">Address</label>
-		          <input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
-		           <label htmlFor="website">Website</label>
-		          <input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
-		          <label htmlFor="showPoster"> Show Poster </label>
-		          <input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload}/>
-		          <img src={this.state.showPoster} />
-		          <button type="submit">Submit</button>
-		        </form>
+					<label htmlFor="title">Title</label>
+					<input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
+					<label htmlFor="description" >Description</label>
+					<input type="text" value={this.state.description} name="description" onChange={this.handleChange} />
+					<label htmlFor="genre">Genre</label>
+					<select name="genre" onChange={this.props.handleChange}>
+						<option value="musical">Musicals</option>
+						<option value="play">Plays</option>
+					</select>
+					<div className="showRunDuration"> 
+						<label htmlFor="startDate">Start Date</label>
+						<input name="startDate" type="date" onChange={this.props.handleChange} />
+						<p>to</p>
+						<label htmlFor="endDate">End Date</label>
+						<input name="endDate" type="date" onChange={this.props.handleChange} />
+					</div>
+					<label htmlFor="venue">Venue</label>
+					<input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
+					<label htmlFor="address">Address</label>
+					<input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
+					<label htmlFor="website">Website</label>
+					<input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
+					<label htmlFor="showPoster"> Show Poster </label>
+					<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload}/>
+					<img src={this.state.showPoster} />
+					<button type="submit">Submit</button>
+				</form>
 			</section>
 		)
 	}
