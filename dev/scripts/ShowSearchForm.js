@@ -1,4 +1,8 @@
 import React from 'react';
+import { 
+	BrowserRouter as Router, 
+	Route, Link, NavLink } from 'react-router-dom';
+import Results from './Results.js';
 
 class ShowSearchForm extends React.Component {
 	render(){
@@ -12,23 +16,24 @@ class ShowSearchForm extends React.Component {
 						<h2>What are you looking for?</h2>
 						<form onSubmit={this.props.handleSubmit}>
 							<label htmlFor="city">Enter city</label>
-							<input name="city" type="text" placeholder="eg. Toronto" onChange={this.props.handleChange} />
+							<input name="city" type="text" value="Toronto" onChange={this.props.handleChange} />
 							<label htmlFor="date">Select a date</label>
 							<input name="date" type="date" onChange={this.props.handleChange} />
 							<label htmlFor="genre">Pick a style of theatre</label>
 							<select name="genre" onChange={this.props.handleChange}>
+								<option value=''>Genres</option>
 								<option value="musical">Musicals</option>
 								<option value="play">Plays</option>
 							</select>
-							<button type="submit">Search
-							</button>
+							<div>
+								<button type="submit">Search</button>
+							</div>
 						</form>
 					</div>
 				</div>
 			</section>
 		)
 	}
-	
 }
 
 export default ShowSearchForm;
