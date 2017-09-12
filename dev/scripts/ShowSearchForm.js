@@ -16,7 +16,7 @@ class ShowSearchForm extends React.Component {
 						<h2>What are you looking for?</h2>
 						<form onSubmit={this.props.handleSubmit}>
 							<label htmlFor="city">Enter city</label>
-							<input name="city" type="text" value="Toronto" onChange={this.props.handleChange} />
+							<input name="city" type="text" defaultValue="Toronto" onChange={this.props.handleChange} />
 							<label htmlFor="date">Select a date</label>
 							<input name="date" type="date" onChange={this.props.handleChange} />
 							<label htmlFor="genre">Pick a style of theatre</label>

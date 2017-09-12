@@ -7,6 +7,7 @@ import {
 import Home from './Home.js';
 import ShowInputForm from './ShowInputForm.js';
 import Results from './Results.js';
+import MoreInformation from './MoreInformation.js';
 
 const dbRef = firebase.database().ref('/items');
 
@@ -25,6 +26,7 @@ class App extends React.Component {
 									<Route exact path="/" component={Home} />
 									<Route path="/add_show" component={ShowInputForm} />
 									<Route path="/results" component={Results} />
+									<Route path="/results/:results_id" component={MoreInformation} />
 								</nav>
 							</div>
 						</header>

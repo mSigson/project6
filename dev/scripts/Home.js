@@ -9,10 +9,9 @@ class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			city: 'Toronto',
+			city: '',
 			genre: '',
 			date: '',
-		
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -40,12 +39,15 @@ class Home extends React.Component {
 		return (
 			<div className='app'>
 				<div className='wrapper'>
-					<ShowSearchForm
-					handleChange={this.handleChange} 
-					handleSubmit={this.handleSubmit} 
-					city={this.state.city}
-					date={this.state.date}
-					/> 
+					<div className="homePageSearchForm">
+						<ShowSearchForm
+						handleChange={this.handleChange} 
+						handleSubmit={this.handleSubmit} 
+						city={this.state.city}
+						date={this.state.date}
+						genre={this.state.genre}
+						/> 
+					</div>
 				</div>
 			</div>
 		);
