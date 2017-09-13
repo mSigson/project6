@@ -4,6 +4,8 @@ import {
 	Route, Link, NavLink } from 'react-router-dom';
 import moment from 'moment';
 import ShowSearchForm from './ShowSearchForm.js';
+import ShowSuggestions from './ShowSuggestions.js';
+import MissionStatement from './MissionStatement.js';
 
 class Home extends React.Component {
 	constructor() {
@@ -29,6 +31,8 @@ class Home extends React.Component {
 		localStorage.setItem("date", grabDate);
 
 		this.context.router.history.push('/results');
+
+		
 	}
 	handleChange(event) {
 		this.setState({
@@ -47,6 +51,8 @@ class Home extends React.Component {
 						date={this.state.date}
 						genre={this.state.genre}
 						/> 
+						<ShowSuggestions />
+						<MissionStatement />
 					</div>
 				</div>
 			</div>

@@ -9,6 +9,9 @@ const notify = require('gulp-notify');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
+const historyApiFallback = require('connect-history-api-fallback');
+const SweetAlert = require('react-bootstrap-sweetalert');
+
 
 gulp.task('styles', () => {
 	return gulp.src('./dev/styles/**/*.scss')
@@ -37,8 +40,9 @@ gulp.task('js', () => {
 gulp.task('bs', () => {
 	return browserSync.init({
 		server: {
-			baseDir: './'
+			baseDir: './',
 		},
+		middleware: [historyApiFallback()],
 		
 	});
 });

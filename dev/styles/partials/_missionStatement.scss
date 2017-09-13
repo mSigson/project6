@@ -1,0 +1,13 @@
+.missionStatement {
+	background: $primayBrandColorFaded;
+	padding: 25px;
+}
+
+.missionStatement .wrapper {
+	width: 80%;
+	margin: 0 auto;
+	background: $secondBrandColor;
+	padding: 10px 30px;
+	text-align: center; 
+	box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
+}

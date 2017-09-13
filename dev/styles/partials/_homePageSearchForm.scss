@@ -1,0 +1,39 @@
+.homePageSearchForm .showSearch {
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 5%, rgba(0, 0, 0, 0.2) 100%), url(../../dev/assets/theatre.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 25px;
+}
+
+.homePageSearchForm .showSearchContainer{
+	margin: 0 auto;
+	width: 70%;
+	display: flex;
+	justify-content: space-between;
+	background: $secondBrandColor;
+	padding: 20px;
+}
+ .homePageSearchForm .showSearch__img {
+	width: 37.5%;
+}
+
+.homePageSearchForm .showSearch__img > img {
+	border-radius: 15%;
+}
+
+.homePageSearchForm .showSearch__form {
+	width: 62.5%;
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.homePageSearchForm .showSearch__form label{
+	margin-right: 10px;
+}
+
+.homePageSearchForm .showSearch__form .inputs {
+	width: 80%;
+}
+

@@ -21,15 +21,14 @@ class Results extends React.Component {
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 	handleSubmit(event) {
 		event.preventDefault();
 
-		const grabCity = this.state.city
 		const grabGenre = this.state.genre
 		const grabDate = this.state.date
 
-		localStorage.setItem("city", grabCity);
 		localStorage.setItem("genre", grabGenre);
 		localStorage.setItem("date", grabDate);
 
@@ -39,6 +38,9 @@ class Results extends React.Component {
 		this.setState({
 			[event.target.name]: event.target.value,
 		});
+	}
+	handleClick(id){
+		this.context.router.history.push(`/results/${id}`);
 	}
 	componentDidMount(){
 		showRef.on('value', (snapshot) => {
@@ -52,6 +54,7 @@ class Results extends React.Component {
 			this.setState({	
 				shows : newShowsArray,
 			});	
+			console.log(newShowsArray);
 		});
 	}
 	render(){
@@ -97,21 +100,19 @@ class Results extends React.Component {
 					<ul className='results_display'>
 						{finalResults.map((result, i) => {
 							return (
-								<Link to={`/results/${result.id}`}>
-									<li className="show" key={result.id}>
-										<h3>{result.showTitle}</h3>
-										<div className="showDetails">
-											<div className="showPoster">
-												<img src={result.showPoster} />
-											</div>
-											<div className="showInfo">
-												<p>From {result.startDate} to {result.endDate}</p>
-												<p>{result.description}</p>
-												<p>{result.venue}</p>
-											</div>
+								<li className="show" key={result.id} onClick={() => this.handleClick(result.id)}>
+									<h3>{result.showTitle}</h3>
+									<div className="showDetails">
+										<div className="showPoster">
+											<img src={result.showPoster} />
 										</div>
-									 								</li>
-								</Link>
+										<div className="showInfo">
+											<p>From {result.startDate} to {result.endDate}</p>
+											<p>{result.description}</p>
+											<p>{result.venue}</p>
+										</div>
+									</div>
+ 								</li>
 							);
 						})};
 					</ul>
@@ -122,6 +123,12 @@ class Results extends React.Component {
 }
 
 Results.contextTypes = {
+  router: React.PropTypes.shape({
+    history: React.PropTypes.object.isRequired,
+  }),
+}; 
+
+MoreInformation.contextTypes = {
   router: React.PropTypes.shape({
     history: React.PropTypes.object.isRequired,
   }),

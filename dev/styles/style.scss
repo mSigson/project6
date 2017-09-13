@@ -1,3 +1,9 @@
-body {
-	background: lightblue;
-}
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/setup';
+@import 'partials/global';
+@import 'partials/header';
+@import 'partials/homePageSearchForm';
+@import 'partials/showSuggestions';
+@import 'partials/missionStatement';
+@import 'partials/_showInputForm.scss';

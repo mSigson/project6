@@ -1,0 +1,66 @@
+html {
+	font-size: $htmlFontSize;
+}
+
+.wrapper {
+	max-width: 1200px;
+}
+
+h1 {
+	font-size: $mainHeadingFontSize;
+	color: white;
+	font-family: 'Patua One', cursive;
+}
+
+h2 {
+	font-size: $subHeadingFontSize;
+	font-family: 'Patua One', cursive;
+}
+
+h3 {
+	font-size: $subSubHeadingFontSize;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+p {
+	font-size: $paragraphFontSize;
+	font-family: 'Raleway', sans-serif;
+}
+
+label, input {
+	font-size: $paragraphFontSize;
+	font-family: 'Raleway', sans-serif;
+}
+
+label {
+	margin-right: 10px;
+}
+
+select {
+	background: white;
+	color: $primayBrandColor;
+	font-size: $paragraphFontSize;
+	font-family: 'Raleway', sans-serif;
+	padding: 5px 10px;
+	width: 140px;
+	height: 35px;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	background: white;
+	color: $primayBrandColor;
+	padding-left: 10px 20px;
+	border: 2px solid $primayBrandColor;
+	font-size: $paragraphFontSize;
+	font-family: 'Raleway', sans-serif; 
+	&:hover{
+		background: $primayBrandColor;
+		color: white;
+		border: 2px solid white;
+	}
+}

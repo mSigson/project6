@@ -1,7 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-
-const showRef = firebase.database().ref('/shows');
+import SweetAlert from 'react-bootstrap-sweetalert';
 
 class ShowInputForm extends React.Component {
 	constructor() {
@@ -49,6 +48,7 @@ class ShowInputForm extends React.Component {
 	}
 	handleSubmit(event){
 		event.preventDefault();
+		const showRef = firebase.database().ref('/shows');
 		const newShow = {
 			showTitle: this.state.showTitle,
 			description:this.state.description,
@@ -63,61 +63,62 @@ class ShowInputForm extends React.Component {
 			showPoster: this.state.showPoster,
 		}
 		showRef.push(newShow);
+		<SweetAlert title="Here's a message!" onConfirm={this.hideAlert} />
+
 	}
 	render(){
 		return (
 			<section className='add-show'>
-				<form onSubmit={this.handleSubmit}>
-					<div>
-						<label htmlFor="title">Title</label>
-						<input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="description" >Description</label>
-						<input type="text" value={this.state.description} name="description" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="genre">Genre</label>
-						<select name="genre" onChange={this.handleChange} >
-							<option>Select a Genre</option>
-							<option value="musical" >Musicals</option>
-							<option value="play">Plays</option>
-						</select>
-					</div>
-					<div className="showRunDuration"> 
-						<label htmlFor="startDate">Start Date</label>
-						<input name="startDate" type="date" onChange={this.handleChange} />
-						<p>to</p>
-						<label htmlFor="endDate">End Date</label>
-						<input name="endDate" type="date" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="ticketPrice">Ticket Price</label>
-						<span className="currencyinput">$<input type="text" name="ticketPrice" onChange={this.handleChange} /></span>
-					</div>
-					<div>
-						<label htmlFor="venue">Venue</label>
-						<input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="address">Address</label>
-						<input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="city">City</label>
-						<input type="text" value={this.state.city} name="city" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="website">Website</label>
-						<input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
-					</div>
-					<div>
-						<label htmlFor="showPoster"> Show Poster </label>
-						<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload}/>
-					</div>
-					<button type="submit">Submit</button>
-					<img src={this.state.showPoster} />
-				</form>
+				<div className="wrapper">
+					<form onSubmit={this.handleSubmit}>
+						<div className="labelInput">
+							<label htmlFor="title">Title</label>
+							<input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="genre">Genre</label>
+							<select name="genre" onChange={this.handleChange} >
+								<option>Select a Genre</option>
+								<option value="musical" >Musicals</option>
+								<option value="play">Plays</option>
+							</select>
+						</div>
+						<div className="labelInput showDuration">
+							<label htmlFor="startDate">Start Date</label>
+							<input name="startDate" type="date" onChange={this.handleChange} />
+							<label htmlFor="endDate">End Date</label>
+							<input name="endDate" type="date" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="venue">Venue</label>
+							<input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="address">Address</label>
+							<input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="city">City</label>
+							<input type="text" value={this.state.city} name="city" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="website">Website</label>
+							<input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
+						</div>
+						<div className="labelInput">
+							<label htmlFor="description" >Description</label>
+							<textarea value={this.state.description} name="description" onChange={this.handleChange} className="description"/>
+						</div>
+						<div className="labelInput">
+							<label htmlFor="showPoster"> Show Poster </label>
+							<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload}/>
+						</div>
+						<button type="submit">Submit</button>
+						<div className="showPoster">
+							<img src={this.state.showPoster} />
+						</div>
+					</form>
+				</div>
 			</section>
 		)
 	}
