@@ -17,7 +17,6 @@ class App extends React.Component {
 		return (
 			<Router history={BrowserHistory}>
 				<div className='app'>
-					<div className='wrapper'>
 						<header>
 								<h1>Playlist Toronto</h1>
 								<nav>
@@ -30,7 +29,6 @@ class App extends React.Component {
 						<Route exact path="/results" component={Results} />
 						<Route exact path="/results/:show_id" component={MoreInformation} />
 					</div>
-				</div>
 			</Router>
 		);
 	}

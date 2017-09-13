@@ -41,7 +41,7 @@ class ShowSuggestions extends React.Component{
 			loopLength = this.state.allShows.length
 		}
 		for (let i = 0; i < loopLength ; i++){
-			let randomNumber = Math.floor(Math.random() * loopLength);
+			let randomNumber = Math.floor(Math.random() * loopLength + 1);
 			let show = this.state.allShows[randomNumber];
 			randoShows.push(show);
 		}

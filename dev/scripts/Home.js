@@ -41,8 +41,7 @@ class Home extends React.Component {
 	}
 	render() {
 		return (
-			<div className='app'>
-				<div className='wrapper'>
+			<section className='homePage'>
 					<div className="homePageSearchForm">
 						<ShowSearchForm
 						handleChange={this.handleChange} 
@@ -54,8 +53,7 @@ class Home extends React.Component {
 						<ShowSuggestions />
 						<MissionStatement />
 					</div>
-				</div>
-			</div>
+			</section>
 		);
 	}
 }

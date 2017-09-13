@@ -1,5 +1,6 @@
 .showSuggestions {
 	padding: 25px;
+	background: white;
 }
 
 .results_display {
@@ -14,8 +15,10 @@
 
 .showSuggestions ul {
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-around;
+	@include respond-to ('medium') {
+		flex-direction: column;
+	}
 }
 
 .showSuggestions li {
@@ -26,20 +29,12 @@
 	box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
 	text-align: center;
 	@include respond-to ('medium') {
-		width: 80%;
-	}
-	@include respond-to ('medium') {
-		width: 45%;
+		width: 65%;
+		margin: 0 auto;
+		margin-bottom: 15px;
 	}
 	@include respond-to ('small') {
 		width: 100%;
-		margin-bottom: 10px;
-	}
-}
-
-.showSuggestions li:nth-child(3) {
-	@include respond-to ('medium') {
-		display: none;
 	}
 }
 
