@@ -34,7 +34,11 @@ class MoreInformation extends React.Component{
 					<div className="fullShowInformation">
 						<h2>{this.state.show.showTitle}</h2>
 						<p>{this.state.show.date}</p>
-						<img src={this.state.show.showPoster} />
+						<p>Tickets via: {this.state.show.website}</p>
+						<p>{this.state.show.description}</p>
+						<div className="moreInfoPoster">
+							<img src={this.state.show.showPoster} />
+						</div>
 					</div>
 				</div>
 			</section>

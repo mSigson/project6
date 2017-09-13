@@ -12,18 +12,37 @@
 	text-align: center;
 }
 
-ul {
+.showSuggestions ul {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
-	list-style: none;
-	padding: 0;
 }
 
-li {
+.showSuggestions li {
 	width: 30%;
 	padding: 10px;
 	border: 1px solid $primayBrandColor;
 	border-radius: 5px;
 	box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
+	text-align: center;
+	@include respond-to ('medium') {
+		width: 80%;
+	}
+	@include respond-to ('medium') {
+		width: 45%;
+	}
+	@include respond-to ('small') {
+		width: 100%;
+		margin-bottom: 10px;
+	}
 }
-	
+
+.showSuggestions li:nth-child(3) {
+	@include respond-to ('medium') {
+		display: none;
+	}
+}
+
+li img {
+	align-self: center;
+}

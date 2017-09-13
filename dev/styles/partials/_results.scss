@@ -1,0 +1,61 @@
+.results .wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.results .resultsPageSearchForm {
+	width: 32.5%;
+	background: $secondBrandColor;
+	text-align: center;
+	padding: 20px 20px;
+	padding-top: 20px;
+	min-height: 50vh;
+	@include respond-to ('searchResultsBreak') {
+		width: 100%;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+	}
+}
+
+.results .resultsPageSearchForm input, .results .resultsPageSearchForm select  {
+	margin-bottom: 20px;
+	@include respond-to ('medium') {
+		width: 100%;
+	}
+}
+
+.results .resultsPageSearchForm img {
+	display: none;
+}
+
+.results .results_display {
+	width: 62.5%;
+	padding: 10px 0px;
+	@include respond-to ('searchResultsBreak') {
+		width: 100%;
+	}
+}
+
+.results .results_display ul{
+	overflow:hidden; 
+	overflow-y:scroll;
+}
+
+.results .results_display li {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	border: 2px solid $primayBrandColor;
+	margin: 10px 0;
+}
+
+.results .results_display li .showPoster {
+	width:32.5%;
+}
+
+.results .results_display li .showInfo {
+	width:62.5%;
+}

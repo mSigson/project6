@@ -9,12 +9,19 @@
 	margin: 0 auto;
 	width: 70%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	background: $secondBrandColor;
 	padding: 20px;
+	@include respond-to ('medium') {
+		width: 100%;
+	}
 }
  .homePageSearchForm .showSearch__img {
 	width: 37.5%;
+	@include respond-to ('large') {
+		display: none;
+	}
 }
 
 .homePageSearchForm .showSearch__img > img {
@@ -27,8 +34,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include respond-to ('large') {
+		width: 100%;
+		text-align: center;
+	}
 }
 
+.homePageSearchForm .showSearch__form .searchInputs {
+	margin-bottom: 15px;
+}
 .homePageSearchForm .showSearch__form label{
 	margin-right: 10px;
 }

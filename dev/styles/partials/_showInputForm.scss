@@ -1,17 +1,46 @@
 .add-show{
 	padding: 25px 0;
+	@include respond-to ('small') {
+		background: $secondBrandColor;
+	}
 }
 .add-show form {
 	margin: 0 auto;
 	width: 80%;
 	background: $primayBrandColor;
 	padding: 30px;
+	@include respond-to ('medium') {
+		width: 90%;
+	}
+	@include respond-to ('small') {
+		width: 100%;
+	}
 }
 
 .add-show form label, .add-show form p{
 	color: white;
 	font-size: 20px;
 } 
+
+.add-show form textarea{
+	color: black;
+	font-size: 15px;
+	@include respond-to ('medium') {
+		width: 400px;
+	}
+	@include respond-to ('small') {
+		width: 100%;
+	}
+}
+
+.add-show form select {
+	@include respond-to ('medium') {
+		width: 400px;
+	}
+	@include respond-to ('small') {
+		width: 100%;
+	}
+}
 
 .add-show form p{
 	padding: 0 5px;
@@ -20,6 +49,21 @@
 .add-show form input {
 	padding: 5px 10px;
 	font-size: 15px;
+	width: 400px;
+	@include respond-to ('medium') {
+		width: 400px;
+	}
+	
+	@include respond-to ('small') {
+		width: 100%;
+	}
+} 
+
+.add-show form .showPoster {
+	padding: 5px 10px;
+	font-size: 15px;
+	background: white;
+	margin-top: 20px;
 } 
 
 .add-show img {
@@ -28,12 +72,17 @@
 
 .labelInput{
 	display: flex;
-	flex-direction: row;
 	margin: 10px 0px;
+	@include respond-to ('medium') {
+		flex-direction: column;
+	}
 }
 
 .showDuration {
 	display: flex;
+	@include respond-to ('medium') {
+		flex-direction: column;
+	}
 }
 
 .showDuration label {
@@ -44,7 +93,6 @@
 	width: 500px;
 	height: 150px;
 }
-
 
 .showPoster {
 	display: flex;

@@ -1,5 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
+import MoreInformation from './MoreInformation.js';
 
 class ShowSuggestions extends React.Component{
 	constructor(){
@@ -8,6 +9,9 @@ class ShowSuggestions extends React.Component{
 			allShows: [],
 			threeRandomShows: [],
 		})
+	}
+	handleClick(id){
+		this.context.router.history.push(`/results/${id}`);
 	}
 	componentDidMount(){
 		const showRef = firebase.database().ref('/shows');
@@ -36,8 +40,6 @@ class ShowSuggestions extends React.Component{
 		else {
 			loopLength = this.state.allShows.length
 		}
-		console.log(this.state.allShows)
-		console.log(loopLength)
 		for (let i = 0; i < loopLength ; i++){
 			let randomNumber = Math.floor(Math.random() * loopLength);
 			let show = this.state.allShows[randomNumber];
@@ -46,6 +48,7 @@ class ShowSuggestions extends React.Component{
 		return(
 			<section className="showSuggestions">
 				<div className="wrapper">
+					<p>May we suggest...</p>
 					<ul className='results_display'>
 						{randoShows.map((show, i) => {
 							return (

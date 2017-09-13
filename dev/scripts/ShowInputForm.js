@@ -55,7 +55,6 @@ class ShowInputForm extends React.Component {
 			genre: this.state.genre,
 			startDate: this.state.startDate,
 			endDate: this.state.endDate,
-			ticketPrice: this.state.ticketPrice,
 			venue: this.state.venue,
 			address: this.state.address,
 			city: this.state.city,
@@ -63,8 +62,6 @@ class ShowInputForm extends React.Component {
 			showPoster: this.state.showPoster,
 		}
 		showRef.push(newShow);
-		<SweetAlert title="Here's a message!" onConfirm={this.hideAlert} />
-
 	}
 	render(){
 		return (
@@ -79,8 +76,8 @@ class ShowInputForm extends React.Component {
 							<label htmlFor="genre">Genre</label>
 							<select name="genre" onChange={this.handleChange} >
 								<option>Select a Genre</option>
-								<option value="musical" >Musicals</option>
-								<option value="play">Plays</option>
+								<option value="musical" >Musical</option>
+								<option value="play">Play</option>
 							</select>
 						</div>
 						<div className="labelInput showDuration">
@@ -111,7 +108,7 @@ class ShowInputForm extends React.Component {
 						</div>
 						<div className="labelInput">
 							<label htmlFor="showPoster"> Show Poster </label>
-							<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload}/>
+							<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload} className="showPoster"/>
 						</div>
 						<button type="submit">Submit</button>
 						<div className="showPoster">

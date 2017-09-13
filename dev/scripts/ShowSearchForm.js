@@ -17,11 +17,11 @@ class ShowSearchForm extends React.Component {
 							<div className="inputs">
 								<h2>What are you looking for?</h2>
 								<form onSubmit={this.props.handleSubmit}>
-									<div>
+									<div className="searchInputs">
 										<label htmlFor="date">Select a date</label>
 										<input name="date" type="date" onChange={this.props.handleChange} />
 									</div>
-									<div>
+									<div className="searchInputs">
 										<label htmlFor="genre">Pick a style of theatre</label>
 										<select name="genre" onChange={this.props.handleChange}>
 											<option value=''>Genres</option>

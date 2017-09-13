@@ -101,16 +101,13 @@ class Results extends React.Component {
 						{finalResults.map((result, i) => {
 							return (
 								<li className="show" key={result.id} onClick={() => this.handleClick(result.id)}>
+									<div className="showPoster">
+										<img src={result.showPoster} />
+									</div>
+									<div className="showInfo">
 									<h3>{result.showTitle}</h3>
-									<div className="showDetails">
-										<div className="showPoster">
-											<img src={result.showPoster} />
-										</div>
-										<div className="showInfo">
-											<p>From {result.startDate} to {result.endDate}</p>
-											<p>{result.description}</p>
-											<p>{result.venue}</p>
-										</div>
+										<p>From {result.startDate} to {result.endDate}</p>
+										<p>{result.venue}</p>
 									</div>
  								</li>
 							);

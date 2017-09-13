@@ -1,5 +1,5 @@
 .missionStatement {
-	background: $primayBrandColorFaded;
+	background: $primayBrandColor;
 	padding: 25px;
 }
 
@@ -10,4 +10,7 @@
 	padding: 10px 30px;
 	text-align: center; 
 	box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
+	@include respond-to ('small') {
+		width: 100%;
+	}	
 }

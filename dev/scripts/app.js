@@ -19,11 +19,11 @@ class App extends React.Component {
 				<div className='app'>
 					<div className='wrapper'>
 						<header>
-							<h1>Playlist Toronto</h1>
-							<nav>
-								<Link to="/" >Home</Link>
-								<Link to="/add_show">Add Show</Link>
-							</nav>
+								<h1>Playlist Toronto</h1>
+								<nav>
+									<Link to="/" >Home</Link>
+									<Link to="/add_show">Add Show</Link>
+								</nav>
 						</header>
 						<Route exact path="/" component={Home} />
 						<Route path="/add_show" component={ShowInputForm} />
