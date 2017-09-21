@@ -1,20 +1,30 @@
 .homePageSearchForm .showSearch {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 5%, rgba(0, 0, 0, 0.2) 100%), url(../../dev/assets/theatre.jpg);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 5%, rgba(0, 0, 0, 0.2) 100%), url(../../public/assets/theatre.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	padding: 25px;
+	height: 92.5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .homePageSearchForm .showSearchContainer{
 	margin: 0 auto;
-	width: 70%;
+	width: 80%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	background: $secondBrandColor;
-	padding: 20px;
+	padding: 35px;
 	@include respond-to ('medium') {
 		width: 100%;
+		padding: 20px;
+	} @include respond-to ('searchResultsBreak') {
+		width: 80%;
+	} @include respond-to ('searchResultsBreak') {
+		width: 100%;
+		padding: 20px;
 	}
 }
  .homePageSearchForm .showSearch__img {
@@ -22,10 +32,6 @@
 	@include respond-to ('large') {
 		display: none;
 	}
-}
-
-.homePageSearchForm .showSearch__img > img {
-	border-radius: 15%;
 }
 
 .homePageSearchForm .showSearch__form {

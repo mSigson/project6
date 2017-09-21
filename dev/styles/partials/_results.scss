@@ -34,7 +34,8 @@
 	width: 62.5%;
 	padding: 10px 0px;
 	@include respond-to ('searchResultsBreak') {
-		width: 100%;
+		width: 95%;
+		margin-left: 0 auto;
 	}
 }
 
@@ -46,7 +47,6 @@
 .results .results_display li {
 	width: 100%;
 	display: flex;
-	justify-content: space-between;
 	padding: 10px;
 	border: 2px solid $primayBrandColor;
 	margin: 10px 0;
@@ -55,8 +55,17 @@
 
 .results .results_display li .showPoster {
 	width:32.5%;
+	margin-right: 10px;
+}
+
+.results .results_display li .showPoster img {
+	max-height: 200px;
 }
 
 .results .results_display li .showInfo {
 	width:62.5%;
+	display: flex;
+	justify-content: left;
+	align-content: center;
+	margin-left: 30px;
 }

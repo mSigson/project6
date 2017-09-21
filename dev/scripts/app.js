@@ -9,6 +9,7 @@ import ShowInputForm from './ShowInputForm.js';
 import ShowSuggestions from './ShowSuggestions.js';
 import Results from './Results.js';
 import MoreInformation from './MoreInformation.js';
+import MissionStatement from './MissionStatement.js';
 
 const dbRef = firebase.database().ref('/items');
 
@@ -21,6 +22,7 @@ class App extends React.Component {
 								<h1>Playlist Toronto</h1>
 								<nav>
 									<Link to="/" >Home</Link>
+									<Link to="/about">About</Link>
 									<Link to="/add_show">Add Show</Link>
 								</nav>
 						</header>
@@ -28,6 +30,7 @@ class App extends React.Component {
 						<Route path="/add_show" component={ShowInputForm} />
 						<Route exact path="/results" component={Results} />
 						<Route exact path="/results/:show_id" component={MoreInformation} />
+						<Route exact path="/about" component={MissionStatement} />
 					</div>
 			</Router>
 		);

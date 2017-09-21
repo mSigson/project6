@@ -54,7 +54,6 @@ class Results extends React.Component {
 			this.setState({	
 				shows : newShowsArray,
 			});	
-			console.log(newShowsArray);
 		});
 	}
 	render(){
@@ -63,7 +62,6 @@ class Results extends React.Component {
 			const chosenGenre = localStorage.getItem("genre");
 			const allShows = this.state.shows;
 			const chosenDate = moment(localStorage.getItem("date"), "YYYY-MM-DD");
-
 			const cityGenreResults =allShows.filter((el) => {
 				if (chosenCity === '' && chosenGenre === ''){
 					return el;
@@ -75,6 +73,7 @@ class Results extends React.Component {
 			});
 
 			const finalResults = cityGenreResults.filter((el, i) => {
+				// const startDate = moment(allShows[i].startDate, "YYYY-MM-DD");
 				const startDate = moment(allShows[i].startDate, "YYYY-MM-DD");
 				const endDate = moment(allShows[i].endDate, "YYYY-MM-DD");
 				if(localStorage.getItem("date") === '') {
@@ -99,15 +98,20 @@ class Results extends React.Component {
 					</div>
 					<ul className='results_display'>
 						{finalResults.map((result, i) => {
+							const startDateRender = moment(result.startDate).format(`MMMM Do YYYY`);
+							const endDateRender = moment(result.endDate).format(`MMMM Do YYYY`);
 							return (
 								<li className="show" key={result.id} onClick={() => this.handleClick(result.id)}>
 									<div className="showPoster">
 										<img src={result.showPoster} />
 									</div>
 									<div className="showInfo">
-									<h3>{result.showTitle}</h3>
-										<p>From {result.startDate} to {result.endDate}</p>
-										<p>{result.venue}</p>
+										<div className="resultText">
+											<h3>{result.showTitle}</h3>
+											<p className="date">From {startDateRender}</p>
+											<p>To {endDateRender}</p>
+											<p>At the {result.venue}</p>
+										</div>
 									</div>
  								</li>
 							);

@@ -67,54 +67,58 @@ class ShowInputForm extends React.Component {
 		return (
 			<section className='add-show'>
 				<div className="wrapper">
-					<form onSubmit={this.handleSubmit}>
-						<div className="labelInput">
-							<label htmlFor="title">Title</label>
-							<input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="genre">Genre</label>
-							<select name="genre" onChange={this.handleChange} >
-								<option>Select a Genre</option>
-								<option value="musical" >Musical</option>
-								<option value="play">Play</option>
-							</select>
-						</div>
-						<div className="labelInput showDuration">
-							<label htmlFor="startDate">Start Date</label>
-							<input name="startDate" type="date" onChange={this.handleChange} />
-							<label htmlFor="endDate">End Date</label>
-							<input name="endDate" type="date" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="venue">Venue</label>
-							<input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="address">Address</label>
-							<input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="city">City</label>
-							<input type="text" value={this.state.city} name="city" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="website">Website</label>
-							<input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
-						</div>
-						<div className="labelInput">
-							<label htmlFor="description" >Description</label>
-							<textarea value={this.state.description} name="description" onChange={this.handleChange} className="description"/>
-						</div>
-						<div className="labelInput">
-							<label htmlFor="showPoster"> Show Poster </label>
-							<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload} className="showPoster"/>
-						</div>
-						<button type="submit">Submit</button>
-						<div className="showPoster">
-							<img src={this.state.showPoster} />
-						</div>
-					</form>
+					<div className="showInputFormContainer">
+						<form onSubmit={this.handleSubmit}>
+							<div className="labelInput">
+								<label htmlFor="title">Title</label>
+								<input type="text" value={this.state.username} name="showTitle" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="genre">Genre</label>
+								<select name="genre" onChange={this.handleChange} >
+									<option>Select a Genre</option>
+									<option value="musical" >Musical</option>
+									<option value="play">Play</option>
+								</select>
+							</div>
+							<div className="labelInput">
+								<label htmlFor="startDate">Start Date</label>
+								<input name="startDate" type="date" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="endDate">End Date</label>
+								<input name="endDate" type="date" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="venue">Venue</label>
+								<input type="text" value={this.state.venue} name="venue" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="address">Address</label>
+								<input type="text" value={this.state.address} name="address" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="city">City</label>
+								<input type="text" value={this.state.city} name="city" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="website">Website</label>
+								<input type="text" value={this.state.website} name="website" onChange={this.handleChange} />
+							</div>
+							<div className="labelInput">
+								<label htmlFor="description" >Description</label>
+								<textarea value={this.state.description} name="description" onChange={this.handleChange} className="description"/>
+							</div>
+							<div className="labelInput">
+								<label htmlFor="showPoster"> Show Poster </label>
+								<input type="file" name="showPoster" accept="image/*" ref={(ref)=>{this.poster = ref}} onChange={this.handleUpload} className="showPoster"/>
+							</div>
+							<button type="submit">Submit</button>
+							<div className="showPoster">
+								<img src={this.state.showPoster} />
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
 		)

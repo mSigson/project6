@@ -26,19 +26,29 @@ class MoreInformation extends React.Component{
 		});
 	}
 	render(){
-		console.log(this.state);
+			const startDate = this.state.show.startDate
+			const startDateRender = moment(startDate).format(`MMMM Do YYYY`);
+			const endDate = this.state.show.endDate
+			const endDateRender = moment(endDate).format(`MMMM Do YYYY`);
 		return(
 			<section className="moreInformation">
 				<div className="wrapper">
 					<button className="backButton" onClick={this.handleClick}>Back to Results</button>
 					<div className="fullShowInformation">
-						<h2>{this.state.show.showTitle}</h2>
-						<p>{this.state.show.date}</p>
-						<p>Tickets via: {this.state.show.website}</p>
-						<p>{this.state.show.description}</p>
-						<div className="moreInfoPoster">
-							<img src={this.state.show.showPoster} />
+						<div className="showPosterAndMainInfo">
+							<div className="moreInfoPoster">
+								<img src={this.state.show.showPoster} />
+							</div>
+							<div className="titleAndDate">
+								<h2>{this.state.show.showTitle}</h2>
+								<p> From: {startDateRender}</p>
+								<p> To: {endDateRender}</p>
+							</div>
 						</div>
+						<p>{this.state.show.description}</p>
+						<a>
+							<p>Tickets at {this.state.show.website}</p>
+						</a>
 					</div>
 				</div>
 			</section>

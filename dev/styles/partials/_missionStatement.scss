@@ -1,16 +1,19 @@
 .missionStatement {
-	background: $primayBrandColor;
+	background: $secondBrandColor;
 	padding: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 92.5vh;
 }
 
-.missionStatement .wrapper {
-	width: 80%;
+.missionStatement_text {
+	width: 100%;
+	max-width: 700px;
 	margin: 0 auto;
-	background: $secondBrandColor;
+	background: $primayBrandColor;
 	padding: 10px 30px;
 	text-align: center; 
+	color: white;
 	box-shadow: 0 3px 7px 0 rgba(0,0,0,.12);
-	@include respond-to ('small') {
-		width: 100%;
-	}	
 }

@@ -6,6 +6,7 @@ html {
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
+	width: 100%;
 }
 
 h1 {
@@ -28,6 +29,9 @@ h3 {
 p {
 	font-size: $paragraphFontSize;
 	font-family: 'Raleway', sans-serif;
+	@include respond-to ('searchResultsBreak') {
+		margin: 2px;
+	}
 }
 
 label, input {

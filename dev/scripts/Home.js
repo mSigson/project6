@@ -50,8 +50,6 @@ class Home extends React.Component {
 						date={this.state.date}
 						genre={this.state.genre}
 						/> 
-						<ShowSuggestions />
-						<MissionStatement />
 					</div>
 			</section>
 		);

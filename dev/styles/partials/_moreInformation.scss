@@ -1,14 +1,31 @@
 .moreInformation .fullShowInformation {
 	padding: 25px;
+	width: 80%;
+	margin: 0 auto;
+	background: white;
+	border: 2px solid $primayBrandColor;
+	margin-top: 25px;
+	@include respond-to ('medium') {
+		width: 90%;
+		padding: 20px;
+	} @include respond-to ('small') {
+		width: 95%;
+	}
+}
+
+.showPosterAndMainInfo {
+	display: flex;
+
 }
 
 .moreInformation .fullShowInformation .moreInfoPoster {
-	width: 50%;
-	margin: 0 auto;
-	display: flex;
-	align-content: center;
-	justify-content: center;
-	@include respond-to ('small') {
-		width: 100%;
-	}
+	width: 30%;
+}
+
+.titleAndDate {
+	margin-left: 30px;
+}
+
+.resultText .date {
+	margin-bottom: 0;
 }

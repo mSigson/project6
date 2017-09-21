@@ -11,7 +11,7 @@ class ShowSearchForm extends React.Component {
 				<div className='wrapper'>
 					<div className="showSearchContainer">
 						<div className="showSearch__img">
-							<img src="./dev/assets/batOutOfHell.jpg" />
+							<img src="./public/assets/batOutOfHell.jpg" />
 						</div>
 						<div className="showSearch__form">
 							<div className="inputs">
