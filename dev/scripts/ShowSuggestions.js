@@ -9,9 +9,27 @@ class ShowSuggestions extends React.Component{
 			allShows: [],
 			threeRandomShows: [],
 		})
+
+		this.generateRandomShows = this.generateRandomShows.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick(id){
 		this.context.router.history.push(`/results/${id}`);
+	}
+	generateRandomShows(newShowsArray){
+		let loopLength  = this.state.allShows.length;
+		let randomNumberArray = [];
+
+			for( let i = 0; i < 3; i++) {
+				let randomNumber = Math.floor(Math.random() * loopLength + 1);
+
+				if (!randomNumberArray.includes(randomNumber)){
+					this.state.threeRandomShows.push(newShowsArray[randomNumber]);
+				}
+			}
+
+			console.log(this.state.threeRandomShows)
+			return randomNumberArray
 	}
 	componentDidMount(){
 		const showRef = firebase.database().ref('/shows');
@@ -24,27 +42,17 @@ class ShowSuggestions extends React.Component{
 				firebaseItem.id = key;
 				newShowsArray.push(firebaseItem);
 			}
+			this.generateRandomShows(newShowsArray);
 			this.setState({	
 				allShows : newShowsArray,
 			});	
-
 		});
 
 	}
 	render(){
-		var randoShows = [];
-		var loopLength  = 0;
-		if(this.state.allShows.length > 3) {
-			loopLength = 3
-		}
-		else {
-			loopLength = this.state.allShows.length
-		}
-		for (let i = 0; i < loopLength ; i++){
-			let randomNumber = Math.floor(Math.random() * loopLength + 1);
-			let show = this.state.allShows[randomNumber];
-			randoShows.push(show);
-		}
+
+		const randoShows = [];
+
 		return(
 			<section className="showSuggestions">
 				<div className="wrapper">
