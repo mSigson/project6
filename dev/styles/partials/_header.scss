@@ -6,7 +6,7 @@ header{
 	width: 100%;
 	z-index: 10;
 	@include respond-to ('small') {
-		padding: 5px;
+		padding: 15px;
 	}
 } 
 
@@ -20,7 +20,7 @@ nav {
 		display: 100%;
 		justify-content: space-between;
 	} @include respond-to ('small') {
-		width: 50%;
+		width: 80%;
 	}
 }
 

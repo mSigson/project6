@@ -33,8 +33,11 @@ class ShowSearchForm extends React.Component {
 										<button type="submit">Search</button>
 									</div>
 								</form>
+								<p className="pleaseNote"><strong>Please note:</strong></p> 
+								<p> This is a test app. </p>
+								<p className="paddingBottom"> Only shows searched between September 8th 2017 and November 26th 2017 will be rendered.</p>
 							</div>
-					</div>
+						</div>
 					</div>
 				</div>
 			</section>

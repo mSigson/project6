@@ -46,9 +46,7 @@ class MoreInformation extends React.Component{
 							</div>
 						</div>
 						<p>{this.state.show.description}</p>
-						<a>
-							<p>Tickets at {this.state.show.website}</p>
-						</a>
+						<p className="website">Tickets at {this.state.show.website}</p>
 					</div>
 				</div>
 			</section>

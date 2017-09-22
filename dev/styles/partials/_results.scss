@@ -51,11 +51,20 @@
 	border: 2px solid $primayBrandColor;
 	margin: 10px 0;
 	background: white;
+	@include respond-to ('small') {
+		width: 97%;
+		margin: 0 auto;
+		margin-bottom: 15px;
+		flex-direction: column;
+	}
 }
 
 .results .results_display li .showPoster {
 	width:32.5%;
 	margin-right: 10px;
+	@include respond-to ('small') {
+		width: 100%;
+	}
 }
 
 .results .results_display li .showPoster img {
@@ -68,4 +77,16 @@
 	justify-content: left;
 	align-content: center;
 	margin-left: 30px;
+	@include respond-to ('small') {
+		width: 100%;
+		margin-left: 0px;
+	}
 }
+
+.results .results_display li .showInfo .resultText {
+	@include respond-to ('small') {
+		width: 100%;
+		text-align: center;
+	}
+}
+

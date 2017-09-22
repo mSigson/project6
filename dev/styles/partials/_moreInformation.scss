@@ -15,17 +15,31 @@
 
 .showPosterAndMainInfo {
 	display: flex;
+	flex-wrap: wrap;
 
 }
 
 .moreInformation .fullShowInformation .moreInfoPoster {
 	width: 30%;
+	@include respond-to ('small') {
+		width: 50%;
+		margin: 0 auto;
+	}
 }
 
 .titleAndDate {
 	margin-left: 30px;
+	@include respond-to ('small') {
+		margin-left: 0px;
+		margin-bottom: 20px;
+	}
 }
 
 .resultText .date {
 	margin-bottom: 0;
+}
+
+.website {
+	margin-top: 20px;
+	overflow-wrap: break-word;
 }

@@ -14,7 +14,7 @@
 
 .add-show form {
 	margin: 0 auto;
-	width: 650px;
+	max-width: 650px;
 	background: $primayBrandColor;
 	padding: 30px;
 	@include respond-to ('medium') {
@@ -22,13 +22,14 @@
 	}
 	@include respond-to ('small') {
 		width: 100%;
+		padding: 10px;
 	}
 }
 
 .add-show form label, .add-show form p{
 	color: white;
 	font-size: 20px;
-	width: 110px;
+	width: 120px;
 } 
 
 .add-show form textarea{

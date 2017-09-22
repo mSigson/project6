@@ -49,7 +49,7 @@ class Home extends React.Component {
 						city={this.state.city}
 						date={this.state.date}
 						genre={this.state.genre}
-						/> 
+						/>
 					</div>
 			</section>
 		);
