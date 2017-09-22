@@ -111,6 +111,13 @@ class Results extends React.Component {
 											<p className="date">From {startDateRender}</p>
 											<p>To {endDateRender}</p>
 											<p>At the {result.venue}</p>
+											<p className="clickForMore">(Click for More Info)</p>
+										</div>
+										<div className="clickForMoreOverlay">
+											<div className="clickForContainer">
+												<p>Click for</p>
+												<p>More Information</p>
+											</div>
 										</div>
 									</div>
  								</li>

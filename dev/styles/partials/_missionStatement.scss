@@ -4,7 +4,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 92.5vh;
+	min-height: 92.5vh;
+	@include respond-to ('small') {
+		min-height: 90vh;
+	}
 }
 
 .missionStatement_text {
